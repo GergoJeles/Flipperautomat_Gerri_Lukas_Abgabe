@@ -1,3 +1,4 @@
+package machine;
 public class EndState implements State {
     private final Machine machine;
 

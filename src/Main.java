@@ -3,6 +3,22 @@ import java.util.Arrays;
 import java.util.List;
 
 import ascii_classes.ASCII_main;
+import commands.ChoosePlayer;
+import commands.ScoreCommand;
+import commands.WrongBumperCommand;
+import commands.WrongCommandAdapter;
+import elements.Bumper;
+import elements.Hole;
+import elements.Kicker;
+import elements.MachineElement;
+import elements.Ramp;
+import elements.SlingShot;
+import elements.Target;
+import machine.Machine;
+import machine.MacroCommand;
+import machine.Mediator;
+import visitors.PointsVisitor;
+import visitors.ResetVisitor;
 import ascii_classes.ASCII_ball_1;
 import ascii_classes.ASCII_ball_2;
 

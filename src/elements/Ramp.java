@@ -1,3 +1,7 @@
+package elements;
+import commands.Command;
+import visitors.Visitor;
+
 public class Ramp extends MachineElement {
     private boolean isOpen;
 

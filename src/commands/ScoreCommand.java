@@ -1,3 +1,4 @@
+package commands;
 public class ScoreCommand implements Command {
     private int points;
 

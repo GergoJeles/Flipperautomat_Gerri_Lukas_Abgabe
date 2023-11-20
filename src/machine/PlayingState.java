@@ -1,3 +1,4 @@
+package machine;
 public class PlayingState implements State {
     private Machine Machine;
 

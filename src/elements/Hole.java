@@ -1,3 +1,9 @@
+package elements;
+
+import commands.Command;
+import visitors.Visitor;
+
+
 public class Hole extends MachineElement {
     public Hole(Command command) {
         super(command);

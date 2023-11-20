@@ -1,3 +1,8 @@
+package visitors;
+
+import elements.Ramp;
+import elements.Target;
+
 public class ResetVisitor implements Visitor {
     @Override
     public void visit(Target target) {

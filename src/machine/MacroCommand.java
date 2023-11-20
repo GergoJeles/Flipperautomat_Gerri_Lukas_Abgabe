@@ -1,5 +1,8 @@
+package machine;
 import java.util.ArrayList;
 import java.util.List;
+
+import commands.Command;
 
 public class MacroCommand implements Command {
     private static MacroCommand instance;

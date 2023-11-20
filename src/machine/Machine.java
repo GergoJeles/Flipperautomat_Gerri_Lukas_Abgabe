@@ -1,3 +1,4 @@
+package machine;
 public class Machine {
     private static Machine instance;
 

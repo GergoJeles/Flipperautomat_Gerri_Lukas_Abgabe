@@ -1,3 +1,4 @@
+package commands;
 public class WrongBumperCommand implements WrongCommand {
     @Override
     public void specialExecute() {

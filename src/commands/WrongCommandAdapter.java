@@ -1,4 +1,6 @@
+package commands;
 // The adapter that adapts the incompatible interface to the Command interface
+
 public class WrongCommandAdapter implements Command {
     private WrongCommand incompatibleCommand;
 

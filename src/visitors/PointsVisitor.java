@@ -1,3 +1,8 @@
+package visitors;
+
+import elements.Ramp;
+import elements.Target;
+
 public class PointsVisitor implements Visitor {
     private int totalPoints;
 

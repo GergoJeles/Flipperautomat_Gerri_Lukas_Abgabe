@@ -1,3 +1,4 @@
+package machine;
 public class NoCreditState implements State {
     private Machine pinballMachine;
 

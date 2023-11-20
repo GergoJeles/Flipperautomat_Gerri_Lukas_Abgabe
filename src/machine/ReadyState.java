@@ -1,3 +1,4 @@
+package machine;
 public class ReadyState implements State {
     private Machine Machine;
 

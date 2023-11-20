@@ -1,5 +1,11 @@
-public class Bumper extends MachineElement {
-    public Bumper(Command command) {
+package elements;
+
+import commands.Command;
+import visitors.Visitor;
+
+
+public class Kicker extends MachineElement {
+    public Kicker(Command command) {
         super(command);
     }
 

@@ -1,3 +1,9 @@
+package elements;
+
+import commands.Command;
+import visitors.Visitor;
+
+
 public abstract class MachineElement {
     private Command command;
 

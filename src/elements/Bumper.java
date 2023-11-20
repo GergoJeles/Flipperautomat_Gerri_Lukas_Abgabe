@@ -1,5 +1,10 @@
-public class SlingShot extends MachineElement {
-    public SlingShot(Command command) {
+package elements;
+import commands.Command;
+import visitors.Visitor;
+
+
+public class Bumper extends MachineElement {
+    public Bumper(Command command) {
         super(command);
     }
 

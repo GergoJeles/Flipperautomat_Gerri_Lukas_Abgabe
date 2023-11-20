@@ -1,4 +1,8 @@
+package machine;
 import java.util.List;
+
+import elements.Ramp;
+import elements.Target;
 
 public class Mediator {
     private List<Target> targets;

@@ -1,3 +1,8 @@
+package elements;
+import commands.Command;
+import machine.Mediator;
+import visitors.Visitor;
+
 public class Target extends MachineElement {
     private int hitCount;  // Non- static variable to track hits
     private final int id;

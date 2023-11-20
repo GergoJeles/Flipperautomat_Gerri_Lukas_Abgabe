@@ -1,5 +1,9 @@
-public class Kicker extends MachineElement {
-    public Kicker(Command command) {
+package elements;
+import commands.Command;
+import visitors.Visitor;
+
+public class SlingShot extends MachineElement {
+    public SlingShot(Command command) {
         super(command);
     }
 
