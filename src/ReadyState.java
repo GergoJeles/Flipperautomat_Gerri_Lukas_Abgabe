@@ -1,8 +1,8 @@
 public class ReadyState implements State {
-    private PinballMachine pinballMachine;
+    private Machine Machine;
 
-    public ReadyState(PinballMachine pinballMachine) {
-        this.pinballMachine = pinballMachine;
+    public ReadyState(Machine Machine) {
+        this.Machine = Machine;
     }
 
     @Override
@@ -13,7 +13,7 @@ public class ReadyState implements State {
     @Override
     public void pressStart() {
         System.out.println("Game starting!");
-        pinballMachine.setState(pinballMachine.getPlayingState());
+        Machine.setState(Machine.getPlayingState());
     }
 
     @Override

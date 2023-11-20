@@ -1,13 +1,13 @@
 import java.util.List;
 
-public class FlipperMediator {
+public class Mediator {
     private List<Target> targets;
-    private Ramp ramp;
+    private Ramp Ramp;
     private boolean isRampOpen = false;
 
-    public FlipperMediator(List<Target> targets, Ramp ramp) {
+    public Mediator(List<Target> targets, Ramp Ramp) {
         this.targets = targets;
-        this.ramp = ramp;
+        this.Ramp = Ramp;
     }
 
     public void targetHit(Target target) {

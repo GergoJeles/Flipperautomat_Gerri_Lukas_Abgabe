@@ -1,4 +1,4 @@
-public class Ramp extends PinballElement {
+public class Ramp extends MachineElement {
     private boolean isOpen;
 
     public Ramp(Command command) {

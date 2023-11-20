@@ -1,4 +1,4 @@
-public class Kicker extends PinballElement {
+public class Kicker extends MachineElement {
     public Kicker(Command command) {
         super(command);
     }

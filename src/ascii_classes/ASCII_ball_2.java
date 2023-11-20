@@ -1,13 +1,14 @@
-public class ASCIIArtFactoryB implements ASCIIArtFactory {
-    private static volatile ASCIIArtFactoryB instance;
+package ascii_classes;
+public class ASCII_ball_2 implements ASCII_main {
+    private static volatile ASCII_ball_2 instance;
 
-    private ASCIIArtFactoryB() {}
+    private ASCII_ball_2() {}
 
-    public static ASCIIArtFactoryB getInstance() {
+    public static ASCII_ball_2 getInstance() {
         if (instance == null) {
-            synchronized (ASCIIArtFactoryB.class) {
+            synchronized (ASCII_ball_2.class) {
                 if (instance == null) {
-                    instance = new ASCIIArtFactoryB();
+                    instance = new ASCII_ball_2();
                 }
             }
         }

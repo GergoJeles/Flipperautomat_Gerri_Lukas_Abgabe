@@ -1,12 +1,16 @@
 public class ScoreCommand implements Command {
-    private int score;
+    private int points;
 
-    public ScoreCommand(int score) {
-        this.score = score;
+    public ScoreCommand(int points) {
+        this.points = points;
     }
 
     @Override
     public void execute() {
-        System.out.println("Points awarded: " + score);
+        displayPointsAwarded();
+    }
+
+    private void displayPointsAwarded() {
+        System.out.println("Points awarded: " + points);
     }
 }

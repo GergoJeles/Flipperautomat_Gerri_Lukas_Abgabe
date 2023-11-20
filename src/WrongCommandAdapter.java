@@ -1,8 +1,8 @@
 // The adapter that adapts the incompatible interface to the Command interface
-public class IncompatibleCommandAdapter implements Command {
-    private IncompatibleCommand incompatibleCommand;
+public class WrongCommandAdapter implements Command {
+    private WrongCommand incompatibleCommand;
 
-    public IncompatibleCommandAdapter(IncompatibleCommand incompatibleCommand) {
+    public WrongCommandAdapter(WrongCommand incompatibleCommand) {
         this.incompatibleCommand = incompatibleCommand;
     }
 

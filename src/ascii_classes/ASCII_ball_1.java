@@ -1,11 +1,12 @@
-public class ASCIIArtFactoryA implements ASCIIArtFactory {
-    private static ASCIIArtFactoryA instance;
+package ascii_classes;
+public class ASCII_ball_1 implements ASCII_main {
+    private static ASCII_ball_1 instance;
 
-    private ASCIIArtFactoryA() {}
+    private ASCII_ball_1() {}
 
-    public static ASCIIArtFactoryA getInstance() {
+    public static ASCII_ball_1 getInstance() {
         if (instance == null) {
-            instance = new ASCIIArtFactoryA();
+            instance = new ASCII_ball_1();
         }
         return instance;
     }

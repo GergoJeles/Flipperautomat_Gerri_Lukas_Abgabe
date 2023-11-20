@@ -2,11 +2,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import ascii_classes.ASCII_main;
+import ascii_classes.ASCII_ball_1;
+import ascii_classes.ASCII_ball_2;
+
 public class Main {
     public static void main(String[] args) {
-        ASCIIArtFactory factoryA = ASCIIArtFactoryA.getInstance();
-        ASCIIArtFactory factoryB = ASCIIArtFactoryB.getInstance();
-        PinballMachine machine = PinballMachine.getInstance();
+        ASCII_main factoryA = ASCII_ball_1.getInstance();
+        ASCII_main factoryB = ASCII_ball_2.getInstance();
+        Machine machine = Machine.getInstance();
         MacroCommand holeCommands = MacroCommand.getInstance();
 
         // No credit - Attempt to start the game
@@ -24,10 +28,10 @@ public class Main {
 
         // Create a Macro Command for the Hole element
         holeCommands.add(new ScoreCommand(1000)); // Award 1000 points
-        holeCommands.add(new ChoosePlayerCommand()); // Bonus points for choosing a player
+        holeCommands.add(new ChoosePlayer()); // Bonus points for choosing a player
 
         // Create the Mediator
-        FlipperMediator mediator = new FlipperMediator(new ArrayList<>(), new Ramp(new ScoreCommand(200)));
+        Mediator mediator = new Mediator(new ArrayList<>(), new Ramp(new ScoreCommand(200)));
 
         // Instantiate Target objects with the Mediator
         Target target1 = new Target(new ScoreCommand(100), mediator);
@@ -40,10 +44,10 @@ public class Main {
         mediator.registerTarget(target3);
 
         // Create the incompatible command
-        IncompatibleBumperCommand incompatibleBumperCommand = new IncompatibleBumperCommand();
+        WrongBumperCommand incompatibleBumperCommand = new WrongBumperCommand();
 
         // Create the adapter and wrap the incompatible command
-        IncompatibleCommandAdapter adapter = new IncompatibleCommandAdapter(incompatibleBumperCommand);
+        WrongCommandAdapter adapter = new WrongCommandAdapter(incompatibleBumperCommand);
 
         // Create Pinball elements
         Hole hole = new Hole(holeCommands);
@@ -67,7 +71,7 @@ public class Main {
         PointsVisitor pointsVisitor = new PointsVisitor();
 
         // List of Pinball elements
-        List<PinballElement> elements = Arrays.asList(target1, ramp);
+        List<MachineElement> elements = Arrays.asList(target1, ramp);
 
         // Reset all elements
         elements.forEach(element -> element.accept(resetVisitor));

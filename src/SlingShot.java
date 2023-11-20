@@ -1,4 +1,4 @@
-public class SlingShot extends PinballElement {
+public class SlingShot extends MachineElement {
     public SlingShot(Command command) {
         super(command);
     }

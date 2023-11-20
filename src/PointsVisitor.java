@@ -1,25 +1,30 @@
 public class PointsVisitor implements Visitor {
-    private int points;
+    private int totalPoints;
 
     public PointsVisitor() {
-        this.points = 0;
+        resetPoints();
     }
 
     @Override
     public void visit(Target target) {
-        points += target.getHitCount() * 10;
+        int targetPoints = target.getHitCount() * 5;
+        totalPoints += targetPoints;
+        System.out.println("Target points added: " + targetPoints);
     }
 
     @Override
     public void visit(Ramp ramp) {
-        points += ramp.getPassThroughCount() * 20;
+        int rampPoints = ramp.getPassThroughCount() * 10;
+        totalPoints += rampPoints;
+        System.out.println("Ramp points added: " + rampPoints);
     }
 
     public int getTotalPoints() {
-        return points;
+        return totalPoints;
     }
 
     public void resetPoints() {
-        points = 0;
+        totalPoints = 0;
+        System.out.println("Total points reset.");
     }
 }

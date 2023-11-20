@@ -1,13 +1,13 @@
-public class Target extends PinballElement {
-    private static int counter = 0;
+public class Target extends MachineElement {
+    private int hitCount;  // Non- static variable to track hits
     private final int id;
     private boolean isDown = false;
-    private FlipperMediator mediator;
+    private Mediator mediator;
 
-    public Target(Command command, FlipperMediator mediator) {
+    public Target(Command command, Mediator mediator) {
         super(command);
         this.mediator = mediator;
-        this.id = ++counter;
+        this.id = ++hitCount;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Target extends PinballElement {
         System.out.println("Target reset");
     }
 
-    public void setMediator(FlipperMediator mediator) {
+    public void setMediator(Mediator mediator) {
         this.mediator = mediator;
     }
 
@@ -50,6 +50,6 @@ public class Target extends PinballElement {
     }
 
     public int getHitCount() {
-        return counter;
+        return hitCount;
     }
 }

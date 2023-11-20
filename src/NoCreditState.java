@@ -1,7 +1,7 @@
 public class NoCreditState implements State {
-    private PinballMachine pinballMachine;
+    private Machine pinballMachine;
 
-    public NoCreditState(PinballMachine pinballMachine) {
+    public NoCreditState(Machine pinballMachine) {
         this.pinballMachine = pinballMachine;
     }
 

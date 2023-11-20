@@ -1,24 +1,24 @@
 public class EndState implements State {
-    private PinballMachine pinballMachine;
+    private final Machine machine;
 
-    public EndState(PinballMachine pinballMachine) {
-        this.pinballMachine = pinballMachine;
+    public EndState(Machine machine) {
+        this.machine = machine;
     }
 
     @Override
     public void insertCoin() {
         System.out.println("The game is over. Please start a new game.");
-        pinballMachine.setState(pinballMachine.getNoCreditState());
+        transitionToNoCreditState();
     }
 
     @Override
     public void pressStart() {
         System.out.println("The game is over. Checking credits...");
-        if (pinballMachine.getCredit() > 0) {
-            pinballMachine.setState(pinballMachine.getReadyState());
+        if (hasCredits()) {
+            transitionToReadyState();
             System.out.println("Ready to play!");
         } else {
-            pinballMachine.setState(pinballMachine.getNoCreditState());
+            transitionToNoCreditState();
             System.out.println("No credit available. Please insert a coin.");
         }
     }
@@ -26,5 +26,17 @@ public class EndState implements State {
     @Override
     public void playGame() {
         System.out.println("Game is over.");
+    }
+
+    private void transitionToReadyState() {
+        machine.setState(machine.getReadyState());
+    }
+
+    private void transitionToNoCreditState() {
+        machine.setState(machine.getNoCreditState());
+    }
+
+    private boolean hasCredits() {
+        return machine.getCredits() > 0;
     }
 }

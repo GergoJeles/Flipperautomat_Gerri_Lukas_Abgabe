@@ -1,56 +1,56 @@
-public class PinballMachine {
-    private static PinballMachine instance;
+public class Machine {
+    private static Machine instance;
 
     private State noCreditState;
     private State readyState;
     private State playingState;
     private State endState;
-    private State state;
-    private int credit = 0;
+    private State currentState;
+    private int credits = 0;
     private int lostBalls = 0;
 
-    private PinballMachine() {
+    private Machine() {
         noCreditState = new NoCreditState(this);
         readyState = new ReadyState(this);
         playingState = new PlayingState(this);
         endState = new EndState(this);
-        state = noCreditState; // Set initial state
+        currentState = noCreditState; // Set initial state
     }
 
-    public static PinballMachine getInstance() {
+    public static Machine getInstance() {
         if (instance == null) {
-            instance = new PinballMachine();
+            instance = new Machine();
         }
         return instance;
     }
 
     public void insertCoin() {
-        credit++;
-        state.insertCoin();
+        credits++;
+        currentState.insertCoin();
     }
 
     public void pressStart() {
-        if (credit > 0) {
-            credit--;
-            state.pressStart();
+        if (credits > 0) {
+            credits--;
+            currentState.pressStart();
         } else {
-            System.out.println("Insufficient credit.");
+            System.out.println("Insufficient credits. Please insert a coin.");
         }
     }
 
     public void playGame() {
-        state.playGame();
+        currentState.playGame();
     }
 
     public void setState(State state) {
-        this.state = state;
+        currentState = state;
     }
 
     public void loseBall() {
         lostBalls++;
         if (lostBalls >= 3) {
             System.out.println("All balls lost. Game over!");
-            setState(getEndState());
+            setState(endState);
             lostBalls = 0;
         }
     }
@@ -71,7 +71,7 @@ public class PinballMachine {
         return endState;
     }
 
-    public int getCredit() {
-        return credit;
+    public int getCredits() {
+        return credits;
     }
 }

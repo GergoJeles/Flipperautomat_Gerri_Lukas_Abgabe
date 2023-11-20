@@ -1,4 +1,4 @@
-public class Bumper extends PinballElement {
+public class Bumper extends MachineElement {
     public Bumper(Command command) {
         super(command);
     }

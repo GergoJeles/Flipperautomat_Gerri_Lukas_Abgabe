@@ -1,7 +1,7 @@
-public abstract class PinballElement {
+public abstract class MachineElement {
     private Command command;
 
-    public PinballElement(Command command) {
+    public MachineElement(Command command) {
         this.command = command;
     }
 
