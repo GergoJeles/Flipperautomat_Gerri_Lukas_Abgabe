@@ -20,4 +20,15 @@ public class GameOverState implements State {
     public void playGame(){
         System.out.println("Spiel laeuft bereits, spiel weiter...");
     }
+    private void transitionToReadyState() {
+        flipperAutomat.setCurrentState(flipperAutomat.getReadyState());
+    }
+
+    private void transitionToNoCreditState() {
+        flipperAutomat.setCurrentState(flipperAutomat.getNoCreditState());
+    }
+
+    private boolean hasCredits() {
+        return flipperAutomat.getCredit() > 0;
+    }
 }

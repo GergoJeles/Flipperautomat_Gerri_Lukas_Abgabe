@@ -16,7 +16,7 @@ public class FlipperContext {
     private int credit = 0;
     private int numberOfBalls = 3;
 
-    private FlipperAutomat(){
+    private FlipperContext() {
         readyState = new ReadyState(this);
         noCreditState = new NoCreditState(this);
         inGameState = new InGameState(this);
@@ -26,7 +26,7 @@ public class FlipperContext {
 
     public static FlipperContext getFlipper(){
         if(flipper == null){
-            flipper = new FlipperAutomat();
+            flipper = new FlipperContext();
         }
         return flipper;
     }
@@ -37,7 +37,7 @@ public class FlipperContext {
 
     public void insertCoin(){
         credit++;
-        currentState.insertCoin();
+        ((POJO.State) currentState).insertCoin();
     }
 
     public void startGame(){

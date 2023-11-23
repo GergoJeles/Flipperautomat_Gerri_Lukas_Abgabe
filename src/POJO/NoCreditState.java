@@ -1,3 +1,5 @@
+package POJO;
+
 import POJO.FlipperContext;
 import POJO.State;
 
