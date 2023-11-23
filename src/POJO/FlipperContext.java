@@ -1,12 +1,8 @@
 package POJO;
 
-import javax.swing.plaf.nimbus.State;
-import POJO.ReadyState;
-import POJO.NoCreditState;
-
 public class FlipperContext {
 
-    private static FlipperContext flipper;
+    private static FlipperContext instance;
 
     private State readyState;
     private State noCreditState;
@@ -25,10 +21,10 @@ public class FlipperContext {
     }
 
     public static FlipperContext getFlipper(){
-        if(flipper == null){
-            flipper = new FlipperContext();
+        if(instance == null){
+            instance = new FlipperContext();
         }
-        return flipper;
+        return instance;
     }
 
     public void setCurrentState(State state) {
@@ -78,7 +74,7 @@ public class FlipperContext {
         return gameOverState;
     }
     
-    public State getCredit(){
+    public int getCredit(){
         return credit;
     }
 }

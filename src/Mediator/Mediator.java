@@ -16,7 +16,7 @@ public class Mediator {
     }
 
     public void targetHit(Target target) {
-        System.out.println("Target hit: " + target);
+        System.out.println("Hit: " + target);
         if (targets.stream().allMatch(Target::isDown)) {
             openRamp();
             raiseAllTargets();
@@ -25,12 +25,12 @@ public class Mediator {
 
     private void openRamp() {
         isRampOpen = true;
-        System.out.println("Ramp opened!");
+        System.out.println("Rampe offen!");
     }
 
     private void raiseAllTargets() {
         targets.forEach(Target::reset);
-        System.out.println("All targets raised!");
+        System.out.println("Alle Ziele bereit!");
     }
 
     public boolean isRampOpen() {
@@ -39,7 +39,7 @@ public class Mediator {
 
     public void closeRamp() {
         isRampOpen = false;
-        System.out.println("Ramp closed!");
+        System.out.println("Rampe geschlossen!");
     }
 
     public void registerTarget(Target target) {
