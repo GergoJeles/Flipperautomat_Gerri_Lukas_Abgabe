@@ -12,7 +12,7 @@ public class Ramp extends FlipperElement {
 
     @Override
     public void accept(Visitor visitor){
-
+        visitor.visit(this);
     }
 
     @Override

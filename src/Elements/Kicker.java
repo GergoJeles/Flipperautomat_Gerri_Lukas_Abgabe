@@ -10,7 +10,7 @@ public class Kicker extends FlipperElement {
 
     @Override
     public void accept(Visitor visitor){
-
+        visitor.visit(this);
     }
 
     @Override

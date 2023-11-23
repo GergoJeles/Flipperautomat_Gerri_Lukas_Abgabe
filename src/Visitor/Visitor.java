@@ -1,11 +1,17 @@
 package Visitor;
 
-import java.lang.annotation.Target;
+import Elements.Bumper;
+import Elements.Hole;
+import Elements.Kicker;
 import Elements.Ramp;
-
+import Elements.SlingShot;
+import Elements.FlipperTarget;
 
 public interface Visitor {
-    void visit(Elements.Target target);
+    void visit(FlipperTarget target);
     void visit(Ramp ramp);
-    void visit(Target target);
+    void visit(Bumper bumper);
+    void visit(Hole hole);
+    void visit(Kicker kicker);
+    void visit(SlingShot slingShot);
 }

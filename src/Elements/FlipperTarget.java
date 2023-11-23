@@ -6,13 +6,13 @@ import Visitor.ResetVisitor;
 import Visitor.PointsVisitor;
 import Mediator.Mediator;
 
-public class Target extends FlipperElement {
-   private int hitCount;  // Non- static variable to track hits
+public class FlipperTarget extends FlipperElement {
+   private int hitCount = 0;  // Non- static variable to track hits
     private final int id;
     private boolean isDown = false;
     private Mediator mediator;
 
-    public Target(Command command, Mediator mediator) {
+    public FlipperTarget(Command command, Mediator mediator) {
         super(command);
         this.mediator = mediator;
         this.id = ++hitCount;
@@ -21,16 +21,22 @@ public class Target extends FlipperElement {
     @Override
     public void hit() {
         super.hit();
-        isDown = true;
+        isDown = isDown();
         mediator.targetHit(this);
+        hitCount++;
     }
 
     public boolean isDown() {
+        if (isDown == false) {
+            this.isDown = true;
+        }
         return isDown;
     }
 
     public void reset() {
-        isDown = false;
+        if (isDown == true) {
+            isDown = false;    
+        }
         System.out.println("Ziel zurueckgesetzt!");
     }
 

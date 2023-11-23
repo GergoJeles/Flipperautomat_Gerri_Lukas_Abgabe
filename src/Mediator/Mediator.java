@@ -3,21 +3,21 @@ package Mediator;
 import java.util.List;
 
 import Elements.Ramp;
-import Elements.Target;
+import Elements.FlipperTarget;
 
 public class Mediator {
-    private List<Target> targets;
+    private List<FlipperTarget> targets;
     private Ramp Ramp;
     private boolean isRampOpen = false;
 
-    public Mediator(List<Target> targets, Ramp Ramp) {
+    public Mediator(List<FlipperTarget> targets, Ramp Ramp) {
         this.targets = targets;
         this.Ramp = Ramp;
     }
 
-    public void targetHit(Target target) {
+    public void targetHit(FlipperTarget target) {
         System.out.println("Hit: " + target);
-        if (targets.stream().allMatch(Target::isDown)) {
+        if (targets.stream().allMatch(FlipperTarget::isDown)) {
             openRamp();
             raiseAllTargets();
         }
@@ -29,7 +29,7 @@ public class Mediator {
     }
 
     private void raiseAllTargets() {
-        targets.forEach(Target::reset);
+        targets.forEach(FlipperTarget::reset);
         System.out.println("Alle Ziele bereit!");
     }
 
@@ -42,7 +42,7 @@ public class Mediator {
         System.out.println("Rampe geschlossen!");
     }
 
-    public void registerTarget(Target target) {
+    public void registerTarget(FlipperTarget target) {
         targets.add(target);
         target.setMediator(this);
     }
